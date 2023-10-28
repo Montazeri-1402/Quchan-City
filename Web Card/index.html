@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Define a container to center the cards horizontally */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style for the individual cards */
+        .card {
+            width: 400px;
+            height: 500px;
+            border: 2px solid #131313;
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #00264d;
+            color: white;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .checkMarks{
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+        }
+        
+        .backCheckmark{
+            display: inline-block; 
+          background-color: #ffffff; 
+          width: 25px; 
+          height: 25px;
+          border-radius: 50%; 
+          text-align: center;
+          line-height: 30px;
+          color: white; 
+        }
+        
+        .item{
+            display: flex;
+            align-items: center;
+            height: 25px;
+            margin: 20px 0;
+        }
+        
+        .contentCheckMark{
+            align-content: center;
+            color: white;
+            padding: 10px 0;   
+            margin-left: 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .btn{
+            width: 250px;
+            height: 40px;
+            border-radius: 30px;
+            justify-self: flex-end; 
+        }
+    </style>
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <div class="container">
+        <div class="card">
+            <!-- Content for the first card -->
+            <h3>Pro</h3>
+            <h4>Fot Agencies</h4>
+            <br>
+            <b style="font-size: 30px;" >$40</b>
+            
+            <br>
+            <br>
+            
+
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">3 Users</p>
+            </div>
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">Unlimited downloads</p>
+            </div>
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">Fully-Editable Box</p>
+            </div>
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">Custom Packs</p>
+            </div>
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">200+ Icons</p>
+            </div>
+
+            <button class="btn">Subscribe</button>
+        </div>
+        <div class="card">
+            <!-- Content for the second card -->
+            <h3>Free</h3>
+            <h4>Fot Freelancers</h4>
+            <br>
+            <b style="font-size: 30px;" >$0</b>
+            
+
+            <br>
+            <br>
+            
+
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">1 Users</p>
+            </div>
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">10 downloads per month</p>
+            </div>
+            <div class="item">
+                <div class="backCheckmark">
+                    <div class="checkMarks">&#10004;</div>
+                </div>
+                <p class="contentCheckMark">Raster file</p>
+            </div>
+
+            <button class="btn">Subscribe</button>
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>

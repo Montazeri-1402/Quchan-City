@@ -1,0 +1,13 @@
+.column {
+    float: left;
+    width: 50%;
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    color: blueviolet;
+  }
