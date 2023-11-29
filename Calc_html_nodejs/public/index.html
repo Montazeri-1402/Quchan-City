@@ -1,0 +1,67 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Calculator</title>
+</head>
+<body>
+    <h1>Node.js Calculator</h1>
+    <form id="calculatorForm">
+        <label for="num1">Number 1:</label>
+        <input type="text" id="num1" name="num1" required>
+        <br>
+        <label for="num2">Number 2:</label>
+        <input type="text" id="num2" name="num2" required>
+        <br>
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation" required>
+            <option value="add">Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+        </select>
+        <br>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+
+            console.log('Input values:', num1, num2, operation);  // Log the input values and operation
+
+            fetch('/calculate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `num1=${num1}&num2=${num2}&operation=${operation}`,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Server response:', data);  // Log the server response
+
+                if (data && !isNaN(data.result)) {
+                    document.getElementById('result').innerText = `Result: ${data.result}`;
+                } else {
+                    throw new Error('Invalid result received from the server');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'Error calculating result';
+            });
+        }
+    </script>
+</body>
+</html>
